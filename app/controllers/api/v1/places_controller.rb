@@ -41,7 +41,7 @@ class Api::V1::PlacesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_place
-      @place = Place.find(params[:id])
+      @place = Place.find_by(slug: params[:slug])
     end
 
     # Only allow a list of trusted parameters through.

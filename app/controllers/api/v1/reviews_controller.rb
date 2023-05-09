@@ -40,8 +40,9 @@ class Api::V1::ReviewsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    #this may need to be changed later - we might want the end point to be a id
     def set_review
-      @review = Review.find(params[:id])
+      @review = Review.find_by(slug: params[:slug])
     end
 
     # Only allow a list of trusted parameters through.

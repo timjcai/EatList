@@ -41,7 +41,7 @@ class Api::V1::ListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = List.find(params[:id])
+      @list = List.find_by(slug: params[:slug])
     end
 
     # Only allow a list of trusted parameters through.
