@@ -3,6 +3,8 @@ import { Grid, Box, Avatar, Heading, Text } from "@chakra-ui/react"
 import { FiMapPin, FiLayers, FiSettings, FiGrid, FiStar } from "react-icons/fi"
 import { Link } from "react-router-dom"
 import './nav.css';
+import List from "../lists/list";
+import Place from "../places/places";
 
 
 function Sidenav() {
@@ -14,9 +16,9 @@ function Sidenav() {
       <Box border='1px' borderColor='black' borderRadius="10px" bg='#ffffff' color="#000000"><FiStar style={{ display: 'inline', marginRight: '1em' }}/>10 Reviews</Box>
       <Grid templateRows='repeat(6, 1fr)' align="left" my="12em" gap={12} >
         <Link><FiGrid style={{ display: 'inline', marginRight: '2em' }}/> Dashboard</Link>
-        <Link><FiLayers style={{ display: 'inline', marginRight: '2em' }}/> Lists</Link>
-        <Link><FiMapPin style={{ display: 'inline', marginRight: '2em' }} /> Places</Link>
-        <Link><FiSettings style={{ display: 'inline', marginRight: '2em' }}/> Settings</Link>
+        <Link to="/" elements={ List }><FiLayers style={{ display: 'inline', marginRight: '2em' }}/> Lists</Link>
+        <Link to="/places" elements={ Place }><FiMapPin style={{ display: 'inline', marginRight: '2em' }} /> Places</Link>
+        <Link to="/settings"><FiSettings style={{ display: 'inline', marginRight: '2em' }}/> Settings</Link>
       </Grid>
     </Box>
   )
